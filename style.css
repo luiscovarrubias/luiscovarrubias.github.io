@@ -9,6 +9,11 @@ body {
     background-color: #c0c0c0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /*Remove Blue Box around clicking links*/
 a:focus {
     outline: none;
@@ -17,9 +22,20 @@ a:focus {
 /*Top window nav buttons (Menu Bar)*/
 nav a {
     font-size: 12px;
-    padding: 6px;
     text-decoration: none;
     color: black;
+}
+
+/*Display top window nav in row (Menu Bar)*/
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+/*Give top window nav buttons shadow when clicked*/
+nav .button:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+        inset -2px -2px #dfdfdf, inset 2px 2px grey;
 }
 
 /*Heading for all pages*/
@@ -73,7 +89,8 @@ h2 {
 }
 
 .window-body-nav {
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-transform: uppercase;
     display: flex;
     text-align: center;
@@ -102,14 +119,15 @@ h2 {
     background-color: #c0c0c0;
 }
 
-
 /*About Page Text*/
 .about-text {
+    font-size: 20px;
     width: 100%;
     max-width: 750px;
     margin: 0 auto;
     background-color: black;
     padding: 20px 20px;
+    font-weight: normal;
 }
 
 
@@ -117,10 +135,65 @@ h2 {
 /* CSS Changes for mobile*/
 @media (max-width: 450px) {
     .window-body-nav {
-        font-size: smaller;
+        font-size: 13px;
     }
 
     h1 {
         font-size: 30px;
     }
+
+    .about-text {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/*TESTING CSS*/
+
+.window-body-content {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.ad-space {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.ad-space,
+.ad-space img {
+    padding: 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Fake in page tab*/
+.window .window-content .window {
+    margin: 20px;
+    max-height: 500px;
+    display: inline-block
+}
+
+/*Content within fake in page tab*/
+.window .window-content .window .window-content {
+    padding: 0;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 40px);
+    padding: 0;
+    margin: 0;
+    border: none;
 }
