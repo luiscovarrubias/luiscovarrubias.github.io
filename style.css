@@ -21,15 +21,34 @@ a:focus {
 
 /*Top window nav buttons (Menu Bar)*/
 nav a {
-    font-size: 12px;
     text-decoration: none;
     color: black;
 }
 
 /*Display top window nav in row (Menu Bar)*/
 nav {
+    font-size: 12px;
     display: flex;
     gap: 10px;
+}
+
+/*This is all for the "Pages" selector in Nav*/
+.button-style {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    color: black;
+    background: silver;
+    text-decoration: none;
+    font-size: 12px;
+    box-sizing: border-box;  
+    cursor: pointer;
+    height: auto;
+    box-shadow: none;
+}
+.button-style:focus {
+    background: silver;
+    color: black;
 }
 
 /*Give top window nav buttons shadow when clicked*/
@@ -151,7 +170,6 @@ h2 {
 
 
 /*TESTING CSS*/
-
 .window-body-content {
     font-size: 18px;
     padding: 10px 20px;
