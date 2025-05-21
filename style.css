@@ -3,10 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* CSS variables for commonly used values */
+:root {
+    --main-bg-color: #c0c0c0;
+    --text-color: white;
+}
 
 /*Set background color for entire page*/
 body {
-    background-color: #c0c0c0;
+    background-color: var(--main-bg-color);
 }
 
 img {
@@ -19,6 +24,7 @@ a:focus {
     outline: none;
 }
 
+/*---------------------------1: Navigation Components----------------------------*/
 /*Top window nav buttons (Menu Bar)*/
 nav a {
     text-decoration: none;
@@ -57,6 +63,8 @@ nav .button:active {
         inset -2px -2px #dfdfdf, inset 2px 2px grey;
 }
 
+/*---------------------------2: Window Components----------------------------*/
+
 /*Heading for all pages*/
 h2 {
     padding-top: 20px;
@@ -64,18 +72,16 @@ h2 {
     text-align: Center;
     color: white;
     text-decoration: underline;
-    ;
 }
 
+/*In window */
 .window-content {
     height: calc(100vh - 40px);
     overflow-y: auto;
-    padding: 20px 20px;
+    padding: 20px;
     color: white;
-    letter-spacing: 2px;
-    font-size: 14px;
-
     letter-spacing: 1px;
+    font-size: 14px;
     text-align: center;
 
     /*BEGINNING background pattern*/
@@ -107,9 +113,11 @@ h2 {
     /*END background pattern*/
 }
 
+/*In window nav at top of page*/
 .window-body-nav {
     padding-top: 20px;
     padding-bottom: 20px;
+    font-size: 13px;
     text-transform: uppercase;
     display: flex;
     text-align: center;
@@ -119,28 +127,52 @@ h2 {
 
 /*In window nav links and on page links*/
 .window-body-nav a,
-.window-body-content a {
+#contact a {
     color: white;
     text-decoration: none;
 }
 
 /*Underline links on hover*/
 .window-body-nav a:hover,
-.window-body-content a:hover {
+#contact a:hover {
     text-decoration: underline;
 }
 
+/*Advertising space formatting*/
+.ad-space {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+.ad-space img {
+    padding: 10px;
+}
 /*Pin status bar class at bottom of window*/
 .status-bar {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #c0c0c0;
+    background-color: var(--main-bg-color);
+}
+
+
+/*---------------------------3: Page-specific styles----------------------------*/
+/*Project page headers*/
+h1 {
+    font-size: 30px;
+}
+/*Main pages header container*/
+#header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*About Page Text*/
-.about-text {
-    font-size: 20px;
+#about-text {
+    font-size: 16px;
     width: 100%;
     max-width: 750px;
     margin: 0 auto;
@@ -149,69 +181,42 @@ h2 {
     font-weight: normal;
 }
 
-
-
-/* CSS Changes for mobile*/
-@media (max-width: 450px) {
-    .window-body-nav {
-        font-size: 13px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    .about-text {
-        font-size: 16px;
-    }
-}
-
-
-
-
-/*TESTING CSS*/
-.window-body-content {
+/*Contact page text*/
+#contact{
     font-size: 18px;
     padding: 10px 20px;
+    color: white;
+    text-decoration: none;
 }
-
-.ad-space {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-}
-
-.ad-space,
-.ad-space img {
-    padding: 10px;
-}
-
-.header-container {
+#contact p{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/*Fake in page tab*/
-.window .window-content .window {
-    margin: 20px;
-    max-height: 500px;
-    display: inline-block
-}
-
-/*Content within fake in page tab*/
-.window .window-content .window .window-content {
-    padding: 0;
-    overflow-y: scroll;
-    height: 500px;
-}
-
-iframe {
+/*HTML page "windows"*/
+.project-card{
+    max-width: 500px;
     width: 100%;
-    height: calc(100vh - 40px);
-    padding: 0;
-    margin: 0;
-    border: none;
+    display: grid;
+    margin: 0 auto;
 }
+
+
+
+/* CSS Changes for mobile*/
+@media (min-width: 620px) {
+    .window-body-nav {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 90px;
+    }
+    #about-text {
+        font-size: 20px;
+    }
+}
+
+
+
+/*TESTING CSS*/
